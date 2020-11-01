@@ -49,11 +49,11 @@ provider "ansible" {
 resource "azurerm_network_interface" "devvm01-nic" {
   name = "devvm01-nic"
   location = "eastus"
-  resource_group_name = "tower"
+  resource_group_name = "tower-rg"
 
   ip_configuration {
     name = "ipconfig1"
-    subnet_id = "/subscriptions/753e241c-7786-48a6-999a-99e0834b3b22/resourceGroups/tower/providers/Microsoft.Network/virtualNetworks/tower-vnet/subnets/default"
+    subnet_id = "/subscriptions/753e241c-7786-48a6-999a-99e0834b3b22/resourceGroups/tower-rg/providers/Microsoft.Network/virtualNetworks/tower-vnet/subnets/default"
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -68,7 +68,7 @@ resource "azurerm_network_interface" "devvm01-nic" {
 resource "azurerm_linux_virtual_machine" "devvm01" {
     name                  = "devvm01"
     location              = "eastus"
-    resource_group_name   = "tower"
+    resource_group_name   = "tower-rg"
     network_interface_ids = [azurerm_network_interface.devvm01-nic.id]
     size                  = "Standard_B1s"
 
