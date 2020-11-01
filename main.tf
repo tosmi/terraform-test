@@ -95,6 +95,7 @@ resource "azurerm_linux_virtual_machine" "devvm01" {
     }
 
     tags = {
-        environment = "Terraform Demo"
+      environment = "Terraform Demo"
+      dev = "true"
     }
 }
