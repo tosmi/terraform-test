@@ -44,7 +44,7 @@ provider "ansible" {
 #   resource_group_name =  azurerm_resource_group.tower.name
 #   virtual_network_name = azurerm_virtual_network.tower-vnet.name
 #   address_prefix = "10.0.0.0/24"
-}
+# }
 
 resource "azurerm_network_interface" "devvm01-nic" {
   name = "devvm01-nic"
