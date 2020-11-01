@@ -49,7 +49,7 @@ provider "ansible" {
 resource "azurerm_network_interface" "devvm01-nic" {
   name = "devvm01-nic"
   location = "eastus"
-  resource_group_name = azurerm_resource_group.tower.name
+  resource_group_name = "tower"
 
   ip_configuration {
     name = "ipconfig1"
